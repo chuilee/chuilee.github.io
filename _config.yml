@@ -1,6 +1,6 @@
 # Site settings
-title: 一二记事
-description: "chuilee的个人博客"
+title: < Hello World />
+description: "Hello World"
 baseurl: ""
 url: "https://chuilee.github.io"
 
@@ -9,9 +9,9 @@ google_analytics: UA—XXXXXXXX-X
 
 # Author
 author:
-  name: Chester How
-  url: https://chester.how
-  email: chesterhow@gmail.com
+  name: Chui Lee
+  url: https://chuilee.github.io
+  email: chuilee8@gmail.com
 
 # Build settings
 markdown: kramdown

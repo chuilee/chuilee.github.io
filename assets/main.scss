@@ -2,4 +2,30 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-@import 'tale';
+@import "tale";
+
+@font-face {
+  font-family: "Anton-Regular";
+  src: url(./fonts/Anton-Regular.ttf);
+}
+
+.nav-title {
+  font-family: "Anton-Regular";
+}
+@media (min-width: 600px) {
+  .nav ul {
+    bottom: 0.4em;
+  }
+}
+
+.post-title {
+  font-size: 2.5em;
+}
+
+.nav {
+  overflow: auto;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba($color: #000000, $alpha: 0.08);
+}
