@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 
 Typescript 是一个强类型的 JavaScript 超集，支持ES6语法，支持面向对象编程的概念，如类、接口、继承、泛型等。Typescript并不直接在浏览器上运行，需要编译器编译成纯Javascript来运行。
 
-### **TypeScript 中 type 和 interface 的区别?**
+### ** type 和 interface 的区别?**
 
 **相同点**： 
 
@@ -28,4 +28,12 @@ Typescript 是一个强类型的 JavaScript 超集，支持ES6语法，支持面
 
 **使用 interface 描述‘数据结构’，使用 type 描述‘类型关系’**
 
+### **简单介绍一下 TypeScript 模块的加载机制？**
+
+假设有一个导入语句 `import { a } from "moduleA"`; 
+
+1. 首先，编译器会尝试定位需要导入的模块文件，通过绝对或者相对的路径查找方式； 
+
+2. 如果上面的解析失败了，没有查找到对应的模块，编译器会尝试定位一个`外部模块声明`（.d.ts）； 
+3. 最后，如果编译器还是不能解析这个模块，则会抛出一个错误 `error TS2307: Cannot find module 'moduleA'.`
 
