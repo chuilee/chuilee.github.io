@@ -5,7 +5,9 @@ author: "Chuilee"
 tags: 前端工程
 excerpt_separator: <!--more-->
 ---
+
 > 网上有很多教怎么搭建的，但却很少记录踩坑的
+
 <!--more-->
 
 ### 踩坑
@@ -27,7 +29,7 @@ chmod a+x commit-msg
 
 增加文件的执行权限。
 
-2. #### 根目录下存在`.prettierrc.js`配置文件，但右键格式化始终不起作用；
+2. #### 根目录下存在`.prettierrc.js`配置文件，但右键格式化始终不起作用
 
 解决方法：
 
@@ -35,7 +37,7 @@ chmod a+x commit-msg
 npm i -D prettier 或者 npm i -g prettier
 ```
 
-安装prettier解决
+安装 prettier 解决
 
 ### 配置 eslint、prettier
 
@@ -53,7 +55,7 @@ npm i eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-plugi
 
 1. #### 在根目录下新建`.eslintrc.js`文件
 
-```json
+```typescript
 /**
  * 所需插件
  * prettier // 规则见 https://prettier.io/docs/en/options.html
@@ -72,18 +74,15 @@ npm i eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-plugi
 module.exports = {
   root: true,
   env: {
-    
     browser: true,
     node: true,
   },
   /* 优先级低于parse的语法解析配置 */
   parserOptions: {
-    
     parser: "@typescript-eslint/parser", // Specifies the ESLint parser
     ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
     sourceType: "module", // Allows for the use of imports
     ecmaFeatures: {
-    
       // tsx: true, // Allows for the parsing of JSX
       jsx: true,
     },
@@ -97,7 +96,6 @@ module.exports = {
   ],
   plugins: ["react"],
   rules: {
-    
     "no-console": process.env.NODE_ENV === "production" ? 1 : 0,
     "no-debugger": process.env.NODE_ENV === "production" ? 1 : 0,
     eqeqeq: 2, // 要求使用 === 和 !==
@@ -125,10 +123,9 @@ module.exports = {
   },
   overrides: [
     {
-    
       files: ["**/__tests__/*.{j,t}s?(x)"],
       env: {
-    
+
         mocha: true,
       },
     },
@@ -138,7 +135,7 @@ module.exports = {
 
 2. #### 在根目录下建立 prettier 配置文件： `.prettierrc.js`
 
-```javascript
+```typescript
 module.exports = {
   printWidth: 100, // 单行输出（不折行）的（最大）长度
   tabWidth: 2, // 每个缩进级别的空格数
@@ -167,7 +164,7 @@ npm i stylelint stylelint-scss stylelint-config-standard-scss stylelint-config-p
 
 #### 根目录下新增 `**.stylelintrc.js**`文件
 
-```
+```typescript
 module.exports = {
   processors: [],
   plugins: [],
@@ -231,13 +228,13 @@ npx --no-install commitlint --config commitlint.config.js --edit $1
 
 根目录创建**commitlint.config.js**
 
-```json
+```typescript
 module.exports = { extends: ['@commitlint/config-conventional'] }
 ```
 
 根目录创建**.lintstagedrc.js**
 
-```json
+```typescript
 module.exports = {
   '*.{js,jsx,ts,tsx}': ['eslint  --fix', 'prettier --write'],
   '*.md': ['prettier --write'],
@@ -245,4 +242,3 @@ module.exports = {
   '*.vue': ['eslint --fix', 'prettier --write', 'stylelint --fix'],
 };
 ```
-
