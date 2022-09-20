@@ -18,6 +18,8 @@ Tale is a minimal Jekyll theme curated for storytellers. Checkout the demo [here
 - Excerpt management
 - [Disqus comments (can be enabled if needed)](#enabling-comments)
 
+
+
 ## Installation
 There are 3 ways to install this theme
 
