@@ -1,3 +1,15 @@
+---
+layout: post
+title: "你好 linux"
+author: "Chuilee"
+tags: 前端工程
+excerpt_separator: <!--more-->
+
+---
+
+> linux命令
+> <!--more-->
+
 #### ls命令简介
 
 ls命令（list）可用于列出指定路径下的文件（Linux中一切皆文件，目录也是文件的一种），如果不指定路径，单独运行ls命令，则默认路径为当前路径。ls命令的使用方式如下：
@@ -30,3 +42,4 @@ ls命令（list）可用于列出指定路径下的文件（Linux中一切皆文
 原文链接：https://blog.csdn.net/Mr_Sudo/article/details/124761409
 
 #### grep
+

@@ -1,3 +1,12 @@
+---
+layout: post
+title: "GIT多仓库迁移合并技术方案"
+author: "Chuilee"
+tags: 前端工程
+excerpt_separator: <!--more-->
+---
+> 假设要合并ABC 不同的分支到新工程X，ABC 工程作为X工程的子目录
+<!--more-->
 ## Git 多仓库合并
 
 假设要合并ABC 不同的分支到新工程X，ABC 工程作为X工程的子目录
@@ -29,7 +38,7 @@ README.md
 mkdir combine && cd combine
 ```
 
-切换到combine 目录，新建合并后的工程目录；假设新合并工程为 `argo`，仓库地址为http://git.analysys.cn/sloong/argo.git
+切换到combine 目录，新建合并后的工程目录；假设新合并工程为 `argo`，仓库地址为<http://git.analysys.cn/sloong/argo.git>
 
 ```sh
 mkdir argo && cd argo
@@ -89,9 +98,9 @@ git clone -b dev http://git.analysys.cn/noah/ark-canary-web.git
 假设我需要合并的主工程名称为argo，那么期望的目录结构如下：
 
 ```markdown
-├── argo 								-- 合并后工程目录
+├── argo         -- 合并后工程目录
 │   ├── argo-streaming  -- streaming工程 并且重命名为argo-streaming 
-│   │   ├── ...... 					-- streaming 工程文件
+│   │   ├── ......      -- streaming 工程文件
 │   ├── argo-server     -- ark-canary-api工程 并且重命名为argo-server
 │   ├── argo-web        -- ark-canary-web工程 并且重命名为argo-web
 ```
@@ -151,14 +160,14 @@ git remote add r_streaming ../streaming
 
 # 检查结果如下：
 argo git:(master) git remote -v
-origin	http://git.analysys.cn/sloong/argo.git (fetch)
-origin	http://git.analysys.cn/sloong/argo.git (push)
-r_server	../ark-canary-api (fetch)
-r_server	../ark-canary-api (push)
-r_web	../ark-canary-web (fetch)
-r_web	../ark-canary-web (push)
-r_streaming	../installer (fetch)
-r_streaming	../installer (push)
+origin http://git.analysys.cn/sloong/argo.git (fetch)
+origin http://git.analysys.cn/sloong/argo.git (push)
+r_server ../ark-canary-api (fetch)
+r_server ../ark-canary-api (push)
+r_web ../ark-canary-web (fetch)
+r_web ../ark-canary-web (push)
+r_streaming ../installer (fetch)
+r_streaming ../installer (push)
 ```
 
 ### 添加子工程的辅助分支(要合并子工程的分支)
@@ -226,11 +235,11 @@ git push origin master
 
 领导觉得太简单，又提要求说：
 
->  “不仅要将多个项目仓库合并到一个工程仓库，保留commits 记录同时，还要将不同项目的不同分支迁移合并到新工程对应版本分支”
+> “不仅要将多个项目仓库合并到一个工程仓库，保留commits 记录同时，还要将不同项目的不同分支迁移合并到新工程对应版本分支”
 >
 > 恕我直言，可以实现！
 
-上面所有的步骤最终将多个项目的某个分支合并到了新工程的master分支，但如果又要迁移合并多项目，还要迁移这些项目的几个分支合并到新的指定分支上，所以迁移的工作量成倍增长：重复上述7步骤 * n个项目* m个分支
+上面所有的步骤最终将多个项目的某个分支合并到了新工程的master分支，但如果又要迁移合并多项目，还要迁移这些项目的几个分支合并到新的指定分支上，所以迁移的工作量成倍增长：重复上述7步骤 *n个项目* m个分支
 
 需求简化：假设要同时
 
@@ -330,4 +339,4 @@ git merge b_udf_5.0 --allow-unrelated-histories
 
 ## 转载
 
-**https://blog.95id.com/git-multi-repo-combine.html**
+**<https://blog.95id.com/git-multi-repo-combine.html>**
