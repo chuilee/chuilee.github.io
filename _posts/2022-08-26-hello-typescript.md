@@ -37,3 +37,12 @@ Typescript 是一个强类型的 JavaScript 超集，支持ES6语法，支持面
 2. 如果上面的解析失败了，没有查找到对应的模块，编译器会尝试定位一个`外部模块声明`（.d.ts）； 
 3. 最后，如果编译器还是不能解析这个模块，则会抛出一个错误 `error TS2307: Cannot find module 'moduleA'.`
 
+### **TypeScript 泛型中的 T、K、V 等到底是个啥？**
+
+**常见的泛型变量名称**：
+
+- T（Type）表示类型
+- K（Key）表示对象中键的类型
+- V（Value）表示对象中值的类型
+- E（Element）表示元素类型 
+- U（unknown）表示不指定泛型变量的实际类型
